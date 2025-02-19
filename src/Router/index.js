@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const router=require('Router')
+const router = express.Router();
 
 const v1ApiRotes=require('./v1/index') //Here we get all the api routes thet are used in v1/index.js routes.
 

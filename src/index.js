@@ -7,8 +7,8 @@ const apiRouters = require('./Router/index');
 const db = require('./models/index');
 
 const setupAndStartServer = () => {
-    app.use(bodyParser);
-    app.use(bodyParser.urlencoded({ extended: true }));
+    app.use(express.json());
+    app.use(express.urlencoded({ extended: true }));
     
     app.use('/api', apiRouters);
 
