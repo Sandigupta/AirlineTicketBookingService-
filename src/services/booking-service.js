@@ -34,7 +34,7 @@ class BookingService{
             await axios.patch(updateFlightRequestURL, { totalSeats: flightData.totalSeats - booking.noOfSeats });
             const finalBooking=await this.bookingRepository.update(booking.id, { status: "Booked" });
             return finalBooking;
-    
+
         }
         catch (error) {
             // console.log(error);
@@ -72,7 +72,7 @@ module.exports = BookingService;
 }
  
  
- FLIGHT DETAILS AFTER AXIOS FETCH {
+ FLIGHT DETAILS AFTER AXIOS FETCH (data.date){
   id: 3,
   flightNumber: 'UK 720',
   airplaneId: 4,
@@ -87,7 +87,7 @@ module.exports = BookingService;
   updatedAt: '2025-01-11T13:58:03.000Z'
 }
 
-FROM BOOKING CONTROLLERS {
+FROM BOOKING CONTROLLERS (.data){
   data: {
     id: 3,
     flightNumber: 'UK 720',
