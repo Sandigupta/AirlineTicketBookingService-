@@ -1,3 +1,177 @@
+# ✈️ Booking Service
+
+A microservice responsible for handling flight bookings.
+
+---
+
+## 📦 Tech Stack
+
+- **Node.js**
+- **Express**
+- **Sequelize ORM**
+- **MySQL / PostgreSQL / MariaDB** (configurable)
+- **RabbitMQ** (Message Broker)
+
+---
+
+## 🚀 Getting Started
+
+Follow these steps to set up the project in your local development environment.
+
+---
+
+### 1. Clone the Repository
+
+```bash
+git clone <your-repo-url>
+cd <project-directory>
+```
+
+---
+
+### 2. Install Dependencies
+
+```bash
+npm install
+```
+
+---
+
+### 3. Environment Configuration
+
+Create a `.env` file in the project root and configure the following environment variables:
+
+```env
+PORT=3000
+
+# External Services
+FLIGHT_SERVICE_PATH=http://localhost:4000
+
+# RabbitMQ / Message Broker
+EXCHANGE_NAME=reminder_exchange
+REMINDER_BINDING_KEY=reminder_key
+MESSAGE_BROKER_URL=amqp://localhost
+```
+
+> ✅ Update these values based on your local or production setup.
+
+---
+
+### 4. Database Configuration
+
+Initialize Sequelize in the `src` directory:
+
+```bash
+cd src
+npx sequelize init
+```
+
+This will create the following structure:
+
+- `config/config.json`
+- `models/`
+- `migrations/`
+- `seeders/`
+
+Update `config/config.json` with your database credentials:
+
+```json
+"development": {
+  "username": "your_db_username",
+  "password": "your_db_password",
+  "database": "your_db_name",
+  "host": "127.0.0.1",
+  "dialect": "mysql"
+}
+```
+
+> Replace `mysql` with your preferred dialect: `postgres`, `mariadb`, etc.
+
+---
+
+### 5. Run the Application
+
+Return to the project root and start the server:
+
+```bash
+npm run dev
+```
+
+The server should now be running on `http://localhost:<PORT>`.
+
+---
+
+## 📌 Highlighted Route
+
+The service exposes the following route for booking creation:
+
+```js
+routes.post('/bookings', bookingController.create);
+```
+
+> This route accepts booking data and triggers the controller logic to process and store the booking.
+
+---
+
+## 🧪 Testing the API
+
+You can test the API using tools like [Postman](https://www.postman.com/) or [curl](https://curl.se/).
+
+Example request:
+```http
+POST /bookings
+Content-Type: application/json
+
+{
+  "flightId": "1234",
+  "userId": "5678",
+  "seats": 2
+}
+```
+
+---
+
+## 🗃 Folder Structure (Simplified)
+
+```
+project-root/
+├── src/
+│   ├── config/
+│   ├── controllers/
+│   ├── models/
+│   ├── routes/
+│   └── services/
+├── .env
+├── package.json
+└── README.md
+```
+
+---
+
+## 📬 Feedback & Contributions
+
+- Found a bug? Open an [issue](https://github.com/Sandigupta/AirlineTicketBookingService-/issues)
+- Want to contribute? Submit a [pull request](https://github.com/Sandigupta/AirlineTicketBookingService-/pulls)
+
+---
+
+## 🧠 Author
+
+Maintained by [Sandeep Gupta](https://github.com/Sandigupta) with ❤️
+
+
+-----
+
+
+
+
+
+
+
+
+
+----
+
 # **Sequelize Model Guide**
 
 ## Introduction
