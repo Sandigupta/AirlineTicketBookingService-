@@ -2,6 +2,22 @@
 
 A microservice responsible for handling flight bookings.
 
+## 🔗 Related Microservices
+
+This project is part of a microservices-based airline booking system. Below are the other services in the ecosystem:
+
+- 🛡 **[Authentication Service](https://github.com/Sandigupta/authentication_service-)**  
+  Handles user registration, login, and authentication logic using JWT and role-based access control.
+
+- ✈️ **[Flight & Search Service](https://github.com/Sandigupta/FlightsAndSearchService)**  
+  Manages flight listings, availability, and provides flight search/filter functionality.
+
+- ⏰ **[Reminder Service](https://github.com/Sandigupta/REMINDER_SERVICE)**  
+  Sends reminders and notifications for upcoming bookings via RabbitMQ-based event handling.
+
+- 🌐 **[API Gateway](https://github.com/Sandigupta/API_GATEWAYS-)**  
+  Serves as the entry point for all client requests. Routes traffic to appropriate services and manages common gateway tasks.
+
 ---
 
 ## 📦 Tech Stack
