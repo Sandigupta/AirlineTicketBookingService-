@@ -10,7 +10,15 @@ const setupAndStartServer = () => {
     app.use(express.json());
     app.use(express.urlencoded({ extended: true }));
     
-    app.use('/api', apiRouters);
+    app.get('bookingservice/api/v1/home', (_, res) => {
+        return res.status(200).send({
+            message: "Hitting the booking service"
+        })
+    });
+
+    app.use('bookingservice/api',apiRouters);
+
+    app.use('/home', apiRouters);
 
     app.listen(PORT, () => {
         console.log(`Server ids running at port:${PORT}`);

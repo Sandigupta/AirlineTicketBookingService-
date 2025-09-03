@@ -1,26 +1,39 @@
 const { StatusCodes } = require('http-status-codes');
 const  {bookingService}  = require('../services/index');
 
-const { createChannel, publishMessage } = require('../utils/messageQueue');
+// const { createChannel, publishMessage } = require('../utils/messageQueue');
 
-const { REMINDER_BINDING_KEY } = require('../config/serverConfig');
+// const { REMINDER_BINDING_KEY } = require('../config/serverConfig');
 
 
 const BookingService = new bookingService();
 
 
 class BookingController{
-    constructor( ) {
+    constructor() {
     } 
     
-    async sendMessageToQueue(req, res) {
-        const channel = await createChannel();
-        const data = { message: 'Success' };
-        publishMessage(channel, REMINDER_BINDING_KEY, JSON.stringify(data));
-        return res.status(200).json({
-            message: 'Succesfully published the event'
-        });
-    }
+    // async sendMessageToQueue(req, res) {
+    //     const channel = await createChannel();
+    //     // const data = {
+    //     //     message: 'Success',
+    //     //     serviceType:'DEMO_SERVICE'
+    //     //  };
+    //     const payload = {
+    //         data: {
+    //             Subject: 'This is a notification from queue',
+    //             Content: 'Some queue will subscribe this',
+    //             recepientEmail: 'cs191297@gmail.com',
+    //             notificationTime:'2023-01-08 10:49:00'
+    //         },
+    //         service:'CREATE_TICKET'
+    //     }
+        
+    //     publishMessage(channel, REMINDER_BINDING_KEY, JSON.stringify(payload));
+    //     return res.status(200).json({
+    //         message: 'Succesfully published the event'
+    //     });
+    // }
     
     async create(req, res) {
         try {
@@ -30,8 +43,7 @@ class BookingController{
                 message: "Succefully completed booking ",
                 succes: true,
                 err: {},
-                data:responce
-                
+                data: responce
             })
         } catch (error) {
             console.log("FROM BOOKING CONTROLLERS", error);
@@ -54,8 +66,5 @@ class BookingController{
     
    
 }
-
-
-
 
 module.exports = BookingController
