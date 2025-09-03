@@ -10,7 +10,8 @@ const bookingController = new BookingController();
 
 // Below will be all the routes 
 routes.post('/bookings', bookingController.create);
-// routes.post('/publish', bookingController.sendMessageToQueue)//for publish the data in queue
+
+
 
 routes.get('/info', (req, res) => {
     return res.status(200).json({
@@ -19,3 +20,31 @@ routes.get('/info', (req, res) => {
 })
 
 module.exports = routes;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// routes.post('/publish', bookingController.sendMessageToQueue)//for publish the data in queue
