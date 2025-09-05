@@ -1,6 +1,7 @@
 # Booking Service
 
 This microservice is responsible for handling flight bookings within a larger, microservices-based airline booking system.
+<img width="1520" height="803" alt="Image" src="https://github.com/user-attachments/assets/c61b0d9f-3e3a-4872-b1c3-5c4a34a2c3ef" />
 
 ## Related Microservices
 
